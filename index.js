@@ -13,7 +13,11 @@ const jwt       = require('jsonwebtoken');
 //Config
 const app = express();
 app.set('view engine','ejs');
-app.use(cooke());
+app.use(cookie());
 app.use(express.json());
 app.use(express)
+app.use(express.urlencoded({extended: true}));
+env.config();
 //routes
+
+
