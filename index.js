@@ -9,23 +9,22 @@ const cookie    = require('cookie-parser');
 const env       = require('dotenv');
 const jwt       = require('jsonwebtoken');
 // import
-
+const commonRoutes = require('./routes/commonRoutes');
 //Config
 const app = express();
 app.set('view engine','ejs');
 app.use(cookie());
 app.use(express.json());
-app.use(express)
 app.use(express.urlencoded({extended: true}));
 env.config();
 //routes
-
+app.use('/',commonRoutes);
 //Database connect
 const database = async()=>{
     try {
         const mgdb = process.env.DATABASE_PORT;
         await mongoose.connect(mgdb);
-        console.log("Database connected");
+        console.log('\x1b[31m[Database connected]\x1b[0m');
     } catch (error) {
         console.log(error.message);
     }
@@ -39,5 +38,14 @@ app.use((error,req,res,next)=>{
         "error"   : statusCode,
         "message" : message
     });
+});
+//Start server
+const server_port = process.env.SERVER_PORT;
+app.listen(server_port,()=>{
+    try {
+        console.log(`\x1b[31m[Server running at ${server_port}]\x1b[0m`);
+    } catch (error) {
+        console.log(error.message);
+    }
 });
 

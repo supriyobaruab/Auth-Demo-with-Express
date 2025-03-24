@@ -15,7 +15,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon start index"
+    "start": "nodemon start index"
   },
   "dependencies": {
     "cookie-parser": "^1.4.7",
