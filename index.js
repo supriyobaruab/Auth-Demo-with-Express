@@ -20,4 +20,14 @@ app.use(express.urlencoded({extended: true}));
 env.config();
 //routes
 
-
+//Database connect
+const database = async()=>{
+    try {
+        const mgdb = process.env.DATABASE_PORT;
+        await mongoose.connect(mgdb);
+        console.log("Database connected");
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+database();
