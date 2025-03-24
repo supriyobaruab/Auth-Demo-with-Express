@@ -1,0 +1,29 @@
+{
+  "name": "auth_demo_with_express",
+  "version": "1.0.0",
+  "description": "A demo authentication page with express js and json web token",
+  "homepage": "https://github.com/supriyobaruab/Auth-Demo-with-Express#readme",
+  "bugs": {
+    "url": "https://github.com/supriyobaruab/Auth-Demo-with-Express/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supriyobaruab/Auth-Demo-with-Express.git"
+  },
+  "license": "ISC",
+  "author": "Supriyo Barua Shaown",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon start index"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.12.2",
+    "nodemon": "^3.1.9"
+  }
+}
