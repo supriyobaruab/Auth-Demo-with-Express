@@ -31,3 +31,13 @@ const database = async()=>{
     }
 }
 database();
+// Default error handler
+app.use((error,req,res,next)=>{
+    const statusCode = error.statusCode || 500;
+    const message    = error.message    || "Serverside error";
+    res.json({
+        "error"   : statusCode,
+        "message" : message
+    });
+});
+
