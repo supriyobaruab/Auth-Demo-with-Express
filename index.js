@@ -7,16 +7,15 @@ const express   = require('express');
 const mongoose  = require('mongoose');
 const cookie    = require('cookie-parser');
 const env       = require('dotenv');
-const jwt       = require('jsonwebtoken');
 // import
-const commonRoutes = require('./routes/commonRoutes');
-//Config
+const commonRoutes         = require('./routes/commonRoutes');
 const app = express();
+//Config
+env.config();
 app.set('view engine','ejs');
 app.use(cookie());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-env.config();
 //routes
 app.use('/',commonRoutes);
 //Database connect

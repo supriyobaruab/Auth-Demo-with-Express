@@ -1,0 +1,17 @@
+const jwt    = require('jsonwebtoken');
+function createToken(req,res,next){
+    try{
+        const secure = process.env.JWT_SECURE; 
+        console.log("Entered createToken");
+    const {name,email} = req.body;
+    const token = jwt.sign({
+        "name"  : name,
+        "email" : email
+    },secure);
+    res.cookie('token',token);
+    next();
+    }catch(error){
+        next(error);
+    }
+}
+module.exports = createToken;
