@@ -7,7 +7,7 @@ function createToken(req,res,next){
     const token = jwt.sign({
         "name"  : name,
         "email" : email
-    },secure);
+    },secure,{expiresIn : "30m"});
     res.cookie('token',token);
     next();
     }catch(error){

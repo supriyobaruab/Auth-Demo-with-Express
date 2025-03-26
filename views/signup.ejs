@@ -4,17 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signup</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <form action="/signup" method="post">
-      <input type="text" name="name" placeholder="Enter your name" />
-      <input type="text" name="email" placeholder="Enter your email" />
-      <input
-        type="password"
-        name="password"
-        placeholder="Enter your password"
-      />
-      <button>Submit</button>
-    </form>
+    <div class="container">
+      <div class="form">
+        <form action="/signup" method="post">
+          <h1>Sign up</h1>
+          <div class="page">
+            <input type="text" name="name" placeholder="Enter your name" />
+            <input type="text" name="email" placeholder="Enter your email" />
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter your password"
+            />
+            <button>Sign up</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
