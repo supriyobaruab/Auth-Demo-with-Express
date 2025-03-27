@@ -18,16 +18,42 @@
         <h1>Login</h1>
         <form action="/login" method="post">
           <div class="page">
-            <input type="text" name="email" placeholder="Enter your email" />
+            <input
+              type="text"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
             <input
               type="password"
               name="password"
               placeholder="Enter your password"
+              required
             />
             <button>Login</button>
           </div>
         </form>
       </div>
     </div>
+    <script>
+      // Ensure the error message is properly assigned
+      const passerror = "<%=errorp%>";
+      const accnerror = "<%=errora%>";
+      // Check if the error message is not empty
+      if (passerror) {
+        const confirmUser = confirm(`${passerror}\nDo you want to recover?`);
+        if (confirmUser) {
+          window.location.replace("/recover");
+        } else {
+        }
+      }
+      if (accnerror) {
+        const confirmUser = confirm(`${accnerror}\nDo you want to sign up?`);
+        if (confirmUser) {
+          window.location.replace("/signup");
+        } else {
+        }
+      }
+    </script>
   </body>
 </html>

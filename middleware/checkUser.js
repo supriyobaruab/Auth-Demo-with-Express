@@ -4,15 +4,14 @@ const checkUser = async(req,res,next)=>{
         const {email,password} = req.body;
         const find = await newuserSchema.findOne({email});
         if(!find){
-            return res.redirect('/signup');
+            return res.render('login',{errora : "No account found",errorp :""});
         }
         if(password!=find.password){
-            return res.json({"message" : "Wrong username or password please recover"});
+            return res.render("login", {errora:"",errorp: "Wrong username or password" })
         }
         next();
     }catch(error) {
         next(error);
-    }
-        
+    }      
 }
 module.exports = checkUser;
