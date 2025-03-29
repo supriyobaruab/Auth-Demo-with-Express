@@ -11,13 +11,25 @@
       <div class="form">
         <form action="/signup" method="post">
           <h1>Sign up</h1>
+          <h6>Already have an account? <a href="/login"> Login</a></h6>
           <div class="page">
-            <input type="text" name="name" placeholder="Enter your name" />
-            <input type="text" name="email" placeholder="Enter your email" />
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
             <input
               type="password"
               name="password"
               placeholder="Enter your password"
+              required
             />
             <button>Sign up</button>
           </div>
